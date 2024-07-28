@@ -61,3 +61,4 @@ The dataset includes 22 columns, capturing various aspects of customer demograph
 **Vehicle.Size:** Size of the vehicle.
 
 
+
