@@ -148,11 +148,11 @@ Converts this dictionary into a DataFrame to match the input format expected by 
 
 Sets up the user interface for the Streamlit app.
 
-st.title and st.write display text and titles on the web page.
+**st.title** and** st.write** display text and titles on the web page.
 
-st.number_input creates input fields for the user to enter the transaction amount and time.
+**st.number_input** creates input fields for the user to enter the transaction amount and time.
 
-st.button triggers the prediction when clicked.
+**st.button** triggers the prediction when clicked.
 
 Calls preprocess_input to prepare the data for the model, then uses model.predict to get the prediction.
 
