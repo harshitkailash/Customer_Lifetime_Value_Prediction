@@ -60,5 +60,105 @@ The dataset includes 22 columns, capturing various aspects of customer demograph
 
 **Vehicle.Size:** Size of the vehicle.
 
+## Step 1: Data Preprocessing
 
+**Data Loading and Inspection:** Loaded the dataset and inspected the data for any missing or null values or anomalies.
+
+**Feature Engineering**: Coverted date to no of days and took log of target variable CLV
+
+**Data Splitting**: Split the dataset into training and testing sets to evaluate model performance.
+
+## Step 2: Training the Models
+We employed various regression algorithms to predict CLV:
+
+**Linear Regression:**
+
+Linear Regression is a basic but powerful algorithm that models the relationship between dependent and independent variables by fitting a linear equation to observed data.
+
+**Decision Tree Regressor:**
+
+Decision Trees split the data into subsets based on the value of input features, making decisions at each node. This non-parametric method is useful for capturing complex relationships.
+
+**Random Forest Regressor:**
+
+Random Forest is an ensemble method that combines multiple decision trees to improve prediction accuracy and control over-fitting.
+
+**Gradient Boosting Regressor:**
+
+Gradient Boosting builds an ensemble of trees sequentially, where each tree corrects the errors of its predecessor. It is known for its high predictive accuracy.
+
+**Model Initialization:**
+
+Initialized the models with default parameters and tuned them using GridSearchCV for optimal performance.
+
+## Step 3: Model Evaluation and Observations
+
+**Model Evaluation:**
+
+Evaluated each model using Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared metrics.
+Used cross-validation to ensure the robustness of model performance.
+
+**Observations:**
+
+Linear Regression had a high bias but low variance, making it less suitable for capturing complex patterns in the data.
+
+Decision Tree Regressor performed better than Linear Regression but was prone to overfitting.
+
+Random Forest Regressor struck a balance between bias and variance, providing good predictive performance.
+
+Gradient Boosting Regressor achieved the best performance with the lowest MAE and MSE, and the highest R-squared value, indicating it captured the intricacies of the data effectively.
+
+Linear Regression had a high bias but low variance, making it less suitable for capturing complex patterns in the data.
+
+Decision Tree Regressor performed better than Linear Regression but was prone to overfitting.
+
+Random Forest Regressor struck a balance between bias and variance, providing good predictive performance.
+
+Gradient Boosting Regressor achieved the best performance with the lowest MAE and MSE, and the highest R-squared value, indicating it captured the intricacies of the data effectively.
+
+# Application for CLV Prediction
+
+**Introduction**
+
+This documentation provides a comprehensive guide to deploying a pre-trained Gradient Boosting Regressor model using Streamlit for real-time CLV prediction. The application allows users to input customer transaction details and get instant predictions on the expected lifetime value of the customer.
+
+This code sets up a simple web application using Streamlit to predict credit card fraud based on user input. Here’s a breakdown of what each part does:
+
+**1. Imports:**
+
+**streamlit** is used for creating web applications.
+
+**joblib **is for loading a pre-trained model.
+
+**pandas** is for handling data in DataFrame format.
+
+**2. Load the Model:**
+
+Loads a pre-trained machine learning model from a file named best_model.pkl using joblib
+
+**3. Preprocess Input Data:**
+
+Defines a function to preprocess user input.
+
+Creates a dictionary with the transaction amount and time (and possibly other features).
+
+Converts this dictionary into a DataFrame to match the input format expected by the model.
+
+**4.Define the Streamlit App:**
+
+Sets up the user interface for the Streamlit app.
+
+st.title and st.write display text and titles on the web page.
+
+st.number_input creates input fields for the user to enter the transaction amount and time.
+
+st.button triggers the prediction when clicked.
+
+Calls preprocess_input to prepare the data for the model, then uses model.predict to get the prediction.
+
+Displays a message based on the prediction result: error if fraud is predicted, success if the transaction is legitimate.
+
+**5. Run the App:**
+
+Ensures the main function runs if the script is executed directly.
 
